@@ -1,15 +1,12 @@
-import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Modal from 'react-bootstrap/Modal';
-import Toast from 'react-bootstrap/Toast';
 
-const Product = (props) => {
-    const { product, onProductButtonClick } = props;
 
-    const { image, title, description, price, discount, quantity } = product;
+const Product = (product) => {
+
+    const { image, title, description, price, discount, quantity, onProductButtonClick, onZiuretiClick } = product;
   
-
+   
     return (
         <>
     <Card style={{ width: '18rem' }}>
@@ -26,6 +23,7 @@ const Product = (props) => {
         </Card.Title>
         <Card.Text>{description}</Card.Text>
         <Button onClick={() => onProductButtonClick(product)} variant="light">Į krepšelį</Button>
+        <Button onClick={() => onZiuretiClick(product)} variant="light">Žiūrėti</Button>
       </Card.Body>
     </Card>
     </>

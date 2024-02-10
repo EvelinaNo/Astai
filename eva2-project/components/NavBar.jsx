@@ -7,6 +7,8 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { ProductList } from './ProductList';
 import { Contacts } from './Contacts';
 import Homepage from './Homepage';
+import { Button } from 'react-bootstrap';
+import { AuthenticationSwitcher } from './AuthenticationContext';
 
 
 function NavBar() {
@@ -37,6 +39,7 @@ function NavBar() {
               {' '}
               Krepšelis
             </Nav.Link>
+          <AuthenticationSwitcher />
           </Nav>
         </Navbar.Collapse>
       </Container>
