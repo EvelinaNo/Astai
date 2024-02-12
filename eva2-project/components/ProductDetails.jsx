@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 
 export const ProductDetails = () => {
   const { id } = useParams();
-  const [oneProduct, setOneProduct] = useState({});
+
+  const [oneProduct, setOneProduct] = useState([]);
   useEffect(() => {
     axios
       .get(`https://fakestoreapi.com/products/${id}`)
@@ -12,9 +13,9 @@ export const ProductDetails = () => {
       .catch((error) => console.log(error));
   }, [id]);
 
-//   if (!oneProduct) {
-//     return <div>Loading...</div>
-//   }
+  if (!oneProduct) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
